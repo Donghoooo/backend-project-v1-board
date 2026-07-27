@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+          crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <script>
+    $(document).ready(function () {
+      $('#btn-cancel').on('click', function () {
+        history.back()
+      })
+    })
+  </script>
+  <title>로그인</title>
+</head>
+<body>
+<main class="container mt-5">
+  <section>
+    <div class="row">
+      <div class="col-sm-6 mx-auto mt-5">
+        <div class="border rounded-3 p-3">
+          <form action="/loginProcess" method="post">
+            <div class="mt-3">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="user-id" name="userId" placeholder="User ID">
+                <label for="user-id">User ID</label>
+              </div>
+            </div>
+            <div class="mt-3">
+              <div class="form-floating">
+                <input type="password" class="form-control" id="user-pw" name="userPw" placeholder="User Password">
+                <label for="user-pw">User Password</label>
+              </div>
+            </div>
+            <div class="mt-3 d-grid gap-2">
+              <button type="submit" class="btn btn-primary">로그인</button>
+              <button type="reset" class="btn btn-secondary" id="btn-cancel">취소</button>
+            </div>
+            <div class="mt-1 d-flex justify-content-end">
+              <a href="#" class="btn btn-link text-info" th:href="@{/signup}">회원가입</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
